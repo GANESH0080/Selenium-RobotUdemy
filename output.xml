@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0.1 (Python 3.12.5 on win32)" generated="2024-09-28T15:41:33.400159" rpa="false" schemaversion="5">
+<suite id="s1" name="pythonProject" source="D:\RobotFramework\pythonProject">
+<suite id="s1-s1" name="Test" source="D:\RobotFramework\pythonProject\Test">
+<suite id="s1-s1-s1" name="TestDemo3" source="D:\RobotFramework\pythonProject\Test\TestDemo3.robot">
+<test id="s1-s1-s1-t1" name="Validate child window functionality" line="13">
+<kw name="Open CHROME Browser with Rahulshettyacademy.com" owner="Generic_resource" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-09-28T15:41:33.921262" level="INFO">Opening browser 'Chrome' to base url 'https://rahulshettyacademy.com/loginpagePractise/'.</msg>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>webdrivermanager.webdriver_manager.chrome.ChromeDriverManager().install(),options=chrome_options))</arg>
+<arg>options=add_experimental_option("detach", True)</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-09-28T15:41:33.919248" elapsed="17.412479"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-09-28T15:41:51.334043" elapsed="0.042413"/>
+</kw>
+<status status="PASS" start="2024-09-28T15:41:33.913541" elapsed="17.462915"/>
+</kw>
+<kw name="Select the link of child window">
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2024-09-28T15:41:51.381027" level="INFO">Clicking link 'css:.blinkingText'.</msg>
+<arg>css:.blinkingText</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-28T15:41:51.376456" elapsed="0.231648"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-28T15:41:56.608645" level="INFO">Slept 5 seconds.</msg>
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-28T15:41:51.608104" elapsed="5.000541"/>
+</kw>
+<kw name="Switch Window" owner="SeleniumLibrary">
+<msg time="2024-09-28T15:41:56.621374" level="INFO">${child-window} = 53B9C440349F2395A7D1F0F047382847</msg>
+<var>${child-window}</var>
+<arg>NEW</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" start="2024-09-28T15:41:56.608645" elapsed="0.012729"/>
+</kw>
+<status status="PASS" start="2024-09-28T15:41:51.376456" elapsed="5.244918"/>
+</kw>
+<kw name="Verify the user is switched to child window">
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2024-09-28T15:41:56.637019" level="INFO">Page title is 'RS Academy'.</msg>
+<arg>RS Academy</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2024-09-28T15:41:56.621374" elapsed="0.015645"/>
+</kw>
+<status status="PASS" start="2024-09-28T15:41:56.621374" elapsed="0.015645"/>
+</kw>
+<kw name="Grab the email id in child window">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-09-28T15:41:56.684319" level="INFO">${Window_msg} = Please email us at mentor@rahulshettyacademy.com with below template to receive response</msg>
+<var>${Window_msg}</var>
+<arg>css:.red</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-28T15:41:56.637019" elapsed="0.047300"/>
+</kw>
+<kw name="Split String" owner="String">
+<msg time="2024-09-28T15:41:56.684319" level="INFO">@{words} = [ Please email us  |  mentor@rahulshettyacademy.com with below templ | e to receive response ]</msg>
+<var>@{words}</var>
+<arg>${Window_msg}</arg>
+<arg>at</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<status status="PASS" start="2024-09-28T15:41:56.684319" elapsed="0.000000"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2024-09-28T15:41:56.684319" level="INFO">${expectedStr} =  mentor@rahulshettyacademy.com with below templ</msg>
+<var>${expectedStr}</var>
+<arg>${words}</arg>
+<arg>1</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2024-09-28T15:41:56.684319" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>semi Index String ${expectedStr}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-09-28T15:41:56.699946" elapsed="0.000000"/>
+</kw>
+<kw name="Split String" owner="String">
+<msg time="2024-09-28T15:41:56.699946" level="INFO">@{finalSplit} = [  mentor@rahulshettyacademy.com  |  below templ ]</msg>
+<var>@{finalSplit}</var>
+<arg>${expectedStr}</arg>
+<arg>with</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<status status="PASS" start="2024-09-28T15:41:56.699946" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Final String after final split ${finalSplit}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-09-28T15:41:56.699946" elapsed="0.000000"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2024-09-28T15:41:56.699946" level="INFO">${finalemail} =  mentor@rahulshettyacademy.com </msg>
+<var>${finalemail}</var>
+<arg>${finalSplit}</arg>
+<arg>0</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2024-09-28T15:41:56.699946" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>First Index String ${finalemail}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-09-28T15:41:56.699946" elapsed="0.000000"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2024-09-28T15:41:56.699946" level="INFO">${Email} = mentor@rahulshettyacademy.com</msg>
+<var>${Email}</var>
+<arg>${finalemail}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2024-09-28T15:41:56.699946" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Now final EMAIL ID is : ${Email}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-09-28T15:41:56.706355" elapsed="0.000510"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-09-28T15:41:56.706865" level="INFO">${Email} = mentor@rahulshettyacademy.com</msg>
+<arg>${Email}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-09-28T15:41:56.706865" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-09-28T15:41:56.637019" elapsed="0.069846"/>
+</kw>
+<kw name="Switch to parent window and enter the email">
+<kw name="Switch Window" owner="SeleniumLibrary">
+<arg>MAIN</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" start="2024-09-28T15:41:56.706865" elapsed="0.034808"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2024-09-28T15:41:56.761454" level="INFO">Page title is 'LoginPage Practise | Rahul Shetty Academy'.</msg>
+<arg>LoginPage Practise | Rahul Shetty Academy</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2024-09-28T15:41:56.741673" elapsed="0.019781"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-28T15:41:56.761454" level="INFO">Typing text 'mentor@rahulshettyacademy.com' into text field 'id:username'.</msg>
+<arg>id:username</arg>
+<arg>${Email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-28T15:41:56.761454" elapsed="0.348842"/>
+</kw>
+<status status="PASS" start="2024-09-28T15:41:56.706865" elapsed="0.403431"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-09-28T15:41:57.110296" elapsed="5.277019"/>
+</kw>
+<tag>REGRESSION</tag>
+<status status="PASS" start="2024-09-28T15:41:33.913541" elapsed="28.473774"/>
+</test>
+<doc>To validate the login form</doc>
+<status status="PASS" start="2024-09-28T15:41:33.447768" elapsed="28.943443"/>
+</suite>
+<status status="PASS" start="2024-09-28T15:41:33.447768" elapsed="28.945895"/>
+</suite>
+<status status="PASS" start="2024-09-28T15:41:33.405545" elapsed="28.991195"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">REGRESSION</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="pythonProject">pythonProject</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Test">pythonProject.Test</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="TestDemo3">pythonProject.Test.TestDemo3</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-09-28T15:41:33.812456" level="WARN">Imported library 'webdriver_manager' contains no keywords.</msg>
+</errors>
+</robot>

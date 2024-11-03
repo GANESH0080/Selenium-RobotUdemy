@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0.1 (Python 3.12.5 on win32)" generated="2024-09-21T11:08:46.778828" rpa="false" schemaversion="5">
+<suite id="s1" name="CustomLibrary" source="D:\RobotFramework\pythonProject\Test\CustomLibrary.robot">
+<kw name="Print Hello Before executing the TC" owner="Generic_resource" type="SETUP">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Hello Team</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-09-21T11:08:47.172113" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-09-21T11:08:47.171112" elapsed="0.002008"/>
+</kw>
+<test id="s1-t1" name="Validate unsuccessful login" line="30">
+<kw name="Open EDGE Browser with Rahulshettyacademy.com" owner="Generic_resource" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-09-21T11:08:47.174188" level="INFO">Opening browser 'edge' to base url 'https://rahulshettyacademy.com/loginpagePractise/'.</msg>
+<arg>${LOGIN URLurl}</arg>
+<arg>${BROWSERb}</arg>
+<arg>${installation}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-09-21T11:08:47.174120" elapsed="33.496144"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-09-21T11:09:20.671270" elapsed="0.321813"/>
+</kw>
+<arg>${u}</arg>
+<arg>${b}</arg>
+<arg>${ins}</arg>
+<status status="PASS" start="2024-09-21T11:08:47.173120" elapsed="33.819963"/>
+</kw>
+<kw name="Enter Username - Password &amp; click on SIGNIN button" owner="LandingPage">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-21T11:09:20.996564" level="INFO">Typing text 'Ganesh' into text field 'id:username'.</msg>
+<arg>id:username</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-21T11:09:20.995258" elapsed="2.849948"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2024-09-21T11:09:23.846401" level="INFO">Typing password into text field 'id:password'.</msg>
+<msg time="2024-09-21T11:09:24.718078" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>id:password</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-21T11:09:23.846401" elapsed="2.042086"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-09-21T11:09:25.889894" level="INFO">Clicking button 'signInBtn'.</msg>
+<arg>signInBtn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-21T11:09:25.888487" elapsed="0.861401"/>
+</kw>
+<arg>${INVALIDUSER_NAME}</arg>
+<arg>${INVALID_PASSWORD}</arg>
+<status status="PASS" start="2024-09-21T11:09:20.994163" elapsed="5.755725"/>
+</kw>
+<kw name="Wait until Element passed on located Page" owner="Generic_resource">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${time}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-21T11:09:26.750895" elapsed="2.389083"/>
+</kw>
+<arg>${msg_unsuccessfull_login}</arg>
+<arg>10s</arg>
+<status status="PASS" start="2024-09-21T11:09:26.749888" elapsed="2.391352"/>
+</kw>
+<kw name="Verify the message" owner="LandingPage">
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2024-09-21T11:09:29.143459" level="INFO">Verifying element 'css:.alert-danger' contains exact text 'Incorrect username/password.'.</msg>
+<arg>${loc_Validation_msg1}</arg>
+<arg>Incorrect username/password.</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2024-09-21T11:09:29.142440" elapsed="0.195033"/>
+</kw>
+<status status="PASS" start="2024-09-21T11:09:29.141240" elapsed="0.197729"/>
+</kw>
+<kw name="Close Browser session" owner="Generic_resource" type="TEARDOWN">
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2024-09-21T11:09:29.340002" elapsed="14.910216"/>
+</kw>
+<status status="PASS" start="2024-09-21T11:09:29.338969" elapsed="14.911249"/>
+</kw>
+<status status="PASS" start="2024-09-21T11:08:47.173120" elapsed="57.078167"/>
+</test>
+<kw name="Print Bye After executing the TC" owner="Generic_resource" type="TEARDOWN">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Bye Team</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-09-21T11:09:44.252636" elapsed="0.001015"/>
+</kw>
+<status status="PASS" start="2024-09-21T11:09:44.252636" elapsed="0.001015"/>
+</kw>
+<doc>To validate the login form</doc>
+<status status="PASS" start="2024-09-21T11:08:46.827126" elapsed="57.427522"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="CustomLibrary">CustomLibrary</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-09-21T11:08:47.141244" level="WARN">Imported library 'webdriver_manager' contains no keywords.</msg>
+</errors>
+</robot>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0.1 (Python 3.12.5 on win32)" generated="2024-09-21T11:08:46.837372" rpa="false" schemaversion="5">
+<suite id="s1" name="CustomLibrary" source="D:\RobotFramework\pythonProject\Test\CustomLibrary.robot">
+<kw name="Print Hello Before executing the TC" owner="Generic_resource" type="SETUP">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Hello Team</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-09-21T11:08:47.222607" elapsed="0.000544"/>
+</kw>
+<status status="PASS" start="2024-09-21T11:08:47.221557" elapsed="0.001594"/>
+</kw>
+<test id="s1-t1" name="Fill the Login details and login form" line="48">
+<kw name="Open EDGE Browser with Rahulshettyacademy.com" owner="Generic_resource" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-09-21T11:08:47.224196" level="INFO">Opening browser 'edge' to base url 'https://rahulshettyacademy.com/loginpagePractise/'.</msg>
+<arg>${LOGIN URLurl}</arg>
+<arg>${BROWSERb}</arg>
+<arg>${installation}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-09-21T11:08:47.224196" elapsed="12.497913"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-09-21T11:08:59.723265" elapsed="0.042512"/>
+</kw>
+<arg>${u}</arg>
+<arg>${b}</arg>
+<arg>${ins}</arg>
+<status status="PASS" start="2024-09-21T11:08:47.223151" elapsed="12.543974"/>
+</kw>
+<kw name="Fill the Login details and Select User option" owner="LandingPage">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-21T11:08:59.769136" level="INFO">Typing text 'rahulshettyacademy' into text field 'id:username'.</msg>
+<arg>id:username</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-21T11:08:59.768138" elapsed="0.204311"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2024-09-21T11:08:59.973817" level="INFO">Typing password into text field 'id:password'.</msg>
+<msg time="2024-09-21T11:09:00.057189" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>id:password</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-21T11:08:59.972449" elapsed="0.168541"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-21T11:09:00.142093" level="INFO">Clicking element 'Xpath://*[@class='customradio'][2]/span[2]'.</msg>
+<arg>Xpath://*[@class='customradio'][2]/span[2]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-21T11:09:00.142093" elapsed="0.086786"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=okayBtn</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-21T11:09:00.230094" elapsed="0.269552"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-09-21T11:09:00.499646" level="INFO">Clicking button 'id=okayBtn'.</msg>
+<arg>id=okayBtn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-21T11:09:00.499646" elapsed="0.099080"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>okayBtn</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2024-09-21T11:09:00.598726" elapsed="0.247398"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2024-09-21T11:09:00.847144" level="INFO">Selecting options from selection list '//select[@class='form-control']' by value consult.</msg>
+<arg>//select[@class='form-control']</arg>
+<arg>consult</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2024-09-21T11:09:00.847144" elapsed="0.160243"/>
+</kw>
+<kw name="Select Checkbox" owner="SeleniumLibrary">
+<msg time="2024-09-21T11:09:01.008408" level="INFO">Selecting checkbox 'terms'.</msg>
+<arg>terms</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-21T11:09:01.007387" elapsed="0.171686"/>
+</kw>
+<kw name="Checkbox Should Be Selected" owner="SeleniumLibrary">
+<msg time="2024-09-21T11:09:01.180087" level="INFO">Verifying checkbox 'terms' is selected.</msg>
+<arg>terms</arg>
+<doc>Verifies checkbox ``locator`` is selected/checked.</doc>
+<status status="PASS" start="2024-09-21T11:09:01.179073" elapsed="0.074649"/>
+</kw>
+<kw name="Hello World" owner="Shop">
+<msg time="2024-09-21T11:09:01.254891" level="INFO">Hello</msg>
+<status status="PASS" start="2024-09-21T11:09:01.253722" elapsed="0.001169"/>
+</kw>
+<arg>${VALIDUSER_NAME}</arg>
+<arg>${VALID_PASSWORD}</arg>
+<status status="PASS" start="2024-09-21T11:08:59.767125" elapsed="1.487766"/>
+</kw>
+<kw name="Close Browser session" owner="Generic_resource" type="TEARDOWN">
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2024-09-21T11:09:01.255911" elapsed="11.218926"/>
+</kw>
+<status status="PASS" start="2024-09-21T11:09:01.255911" elapsed="11.218926"/>
+</kw>
+<status status="PASS" start="2024-09-21T11:08:47.223151" elapsed="25.251686"/>
+</test>
+<kw name="Print Bye After executing the TC" owner="Generic_resource" type="TEARDOWN">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Bye Team</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-09-21T11:09:12.477965" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-09-21T11:09:12.476963" elapsed="0.002001"/>
+</kw>
+<doc>To validate the login form</doc>
+<status status="PASS" start="2024-09-21T11:08:46.867938" elapsed="25.611026"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="CustomLibrary">CustomLibrary</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-09-21T11:08:47.187932" level="WARN">Imported library 'webdriver_manager' contains no keywords.</msg>
+</errors>
+</robot>

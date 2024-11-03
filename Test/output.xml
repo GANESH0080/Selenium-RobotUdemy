@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0.1 (Python 3.12.5 on win32)" generated="2024-09-23T17:58:26.186217" rpa="false" schemaversion="5">
+<suite id="s1" name="Test" source="D:\RobotFramework\pythonProject\Test">
+<suite id="s1-s1" name="TestDictionaryRobot" source="D:\RobotFramework\pythonProject\Test\TestDictionaryRobot.robot">
+<test id="s1-s1-t1" name="Play around the Dictionary" line="13">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-09-23T17:58:27.311182" level="INFO">&amp;{dict} = { name=Ganesh | course=Robot | Trainer=Salunkhe | 98=45 | age=37 }</msg>
+<var>&amp;{dict}</var>
+<arg>name=Ganesh</arg>
+<arg>course=Robot</arg>
+<arg>Trainer=Salunkhe</arg>
+<arg>98=45</arg>
+<arg>age=37</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-09-23T17:58:27.311182" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-09-23T17:58:27.311182" level="INFO">{'name': 'Ganesh', 'course': 'Robot', 'Trainer': 'Salunkhe', '98': '45', 'age': '37'}</msg>
+<arg>${dict}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-09-23T17:58:27.311182" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${dict}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-09-23T17:58:27.311182" elapsed="0.000000"/>
+</kw>
+<kw name="Dictionary Should Contain Item" owner="Collections">
+<arg>${dict}</arg>
+<arg>course</arg>
+<arg>Robot</arg>
+<doc>An item of ``key`` / ``value`` must be found in a ``dictionary``.</doc>
+<status status="PASS" start="2024-09-23T17:58:27.311182" elapsed="0.000000"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${dict}</arg>
+<arg>Trainer</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2024-09-23T17:58:27.317984" elapsed="0.000000"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${dict}</arg>
+<arg>98</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2024-09-23T17:58:27.317984" elapsed="0.000000"/>
+</kw>
+<kw name="Dictionary Should Contain Value" owner="Collections">
+<arg>${dict}</arg>
+<arg>37</arg>
+<doc>Fails if ``value`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2024-09-23T17:58:27.317984" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${dict}[course]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-09-23T17:58:27.317984" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${dict}[98]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-09-23T17:58:27.317984" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${dict}[age]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-09-23T17:58:27.322599" elapsed="0.000000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2024-09-23T17:58:27.322599" level="INFO">${namevalue} = Ganesh</msg>
+<var>${namevalue}</var>
+<arg>${dict}</arg>
+<arg>name</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2024-09-23T17:58:27.322599" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${namevalue}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-09-23T17:58:27.325651" elapsed="0.000000"/>
+</kw>
+<tag>API</tag>
+<status status="PASS" start="2024-09-23T17:58:27.311182" elapsed="0.016287"/>
+</test>
+<test id="s1-s1-t2" name="Add Book in Library Database" line="31">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-09-23T17:58:27.327469" level="INFO">&amp;{req_body} = { name=Learn Appium Automation with python3 | isbn=867450 | aisle=9923800 | author=John }</msg>
+<var>&amp;{req_body}</var>
+<arg>name=${bookName}</arg>
+<arg>isbn=867450</arg>
+<arg>aisle=9923800</arg>
+<arg>author=John</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-09-23T17:58:27.327469" elapsed="0.000000"/>
+</kw>
+<kw name="POST" owner="RequestsLibrary">
+<msg time="2024-09-23T17:58:27.678258" level="INFO">POST Request : url=http://216.10.245.166/Library/Addbook.php 
+ path_url=/Library/Addbook.php 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '104', 'Content-Type': 'application/json'} 
+ body=b'{"name": "Learn Appium Automation with python3", "isbn": "867450", "aisle": "9923800", "author": "John"}' 
+ </msg>
+<msg time="2024-09-23T17:58:27.679867" level="INFO">POST Response : url=http://216.10.245.166/Library/Addbook.php 
+ status=200, reason=OK 
+ headers={'Date': 'Mon, 23 Sep 2024 12:28:26 GMT', 'Server': 'Apache', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'POST', 'Access-Control-Max-Age': '3600', 'Access-Control-Allow-Headers': 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With', 'Keep-Alive': 'timeout=5, max=100', 'Connection': 'Keep-Alive', 'Transfer-Encoding': 'chunked', 'Content-Type': 'application/json;charset=UTF-8'} 
+ body={"Msg":"successfully added","ID":"8674509923800"} 
+ </msg>
+<msg time="2024-09-23T17:58:27.679867" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>${baseurl}/Library/Addbook.php</arg>
+<arg>json=${req_body}</arg>
+<arg>expected_status=200</arg>
+<doc>Sends a POST request.</doc>
+<status status="PASS" start="2024-09-23T17:58:27.327469" elapsed="0.352962"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.json()}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-09-23T17:58:27.680431" elapsed="0.000000"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${response.json()}</arg>
+<arg>ID</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2024-09-23T17:58:27.680431" elapsed="0.000000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2024-09-23T17:58:27.680431" level="INFO">${idvalue} = 8674509923800</msg>
+<var>${idvalue}</var>
+<arg>${response.json()}</arg>
+<arg>ID</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2024-09-23T17:58:27.680431" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${idvalue}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-09-23T17:58:27.680431" elapsed="0.000000"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-09-23T17:58:27.692464" level="INFO">${idvalue} = 8674509923800</msg>
+<arg>${idvalue}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-09-23T17:58:27.692464" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.json()}[Msg]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-09-23T17:58:27.692464" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>successfully added</arg>
+<arg>${response.json()}[Msg]</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-09-23T17:58:27.692464" elapsed="0.000000"/>
+</kw>
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>200</arg>
+<arg>${response}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" start="2024-09-23T17:58:27.692464" elapsed="0.000000"/>
+</kw>
+<tag>API</tag>
+<status status="PASS" start="2024-09-23T17:58:27.327469" elapsed="0.364995"/>
+</test>
+<test id="s1-s1-t3" name="Get the Book Details which got added" line="46">
+<kw name="GET" owner="RequestsLibrary">
+<msg time="2024-09-23T17:58:27.947913" level="INFO">GET Request : url=http://216.10.245.166/Library/GetBook.php?ID=8674509923800 
+ path_url=/Library/GetBook.php?ID=8674509923800 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2024-09-23T17:58:27.947913" level="INFO">GET Response : url=http://216.10.245.166/Library/GetBook.php?ID=8674509923800 
+ status=200, reason=OK 
+ headers={'Date': 'Mon, 23 Sep 2024 12:28:27 GMT', 'Server': 'Apache', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'POST', 'Access-Control-Max-Age': '3600', 'Access-Control-Allow-Headers': 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With', 'Keep-Alive': 'timeout=5, max=99', 'Connection': 'Keep-Alive', 'Transfer-Encoding': 'chunked', 'Content-Type': 'application/json;charset=UTF-8'} 
+ body=[{"book_name":"Learn Appium Automation with python3","isbn":"867450","aisle":"9923800","author":"John"}] 
+ </msg>
+<msg time="2024-09-23T17:58:27.947913" level="INFO">${getresponse} = &lt;Response [200]&gt;</msg>
+<var>${getresponse}</var>
+<arg>${baseurl}/Library/GetBook.php</arg>
+<arg>params=ID=${idvalue}</arg>
+<arg>expected_status=200</arg>
+<doc>Sends a GET request.</doc>
+<status status="PASS" start="2024-09-23T17:58:27.708168" elapsed="0.239745"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${getresponse.json()}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-09-23T17:58:27.947913" elapsed="0.003246"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${getresponse.json()}[0][book_name]</arg>
+<arg>${bookName}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-09-23T17:58:27.951159" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${getresponse.json()}[0][book_name]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-09-23T17:58:27.951159" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${getresponse.json()}[0][isbn]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-09-23T17:58:27.951159" elapsed="0.000000"/>
+</kw>
+<tag>API</tag>
+<status status="PASS" start="2024-09-23T17:58:27.692464" elapsed="0.258695"/>
+</test>
+<test id="s1-s1-t4" name="Delete the Book Details which got added" line="59">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-09-23T17:58:27.951159" level="INFO">&amp;{deletereq_body} = { ID=8674509923800 }</msg>
+<var>&amp;{deletereq_body}</var>
+<arg>ID=${idvalue}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-09-23T17:58:27.951159" elapsed="0.000000"/>
+</kw>
+<kw name="POST" owner="RequestsLibrary">
+<msg time="2024-09-23T17:58:28.599356" level="INFO">POST Request : url=http://216.10.245.166/Library/DeleteBook.php 
+ path_url=/Library/DeleteBook.php 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '23', 'Content-Type': 'application/json'} 
+ body=b'{"ID": "8674509923800"}' 
+ </msg>
+<msg time="2024-09-23T17:58:28.599356" level="INFO">POST Response : url=http://216.10.245.166/Library/DeleteBook.php 
+ status=200, reason=OK 
+ headers={'Date': 'Mon, 23 Sep 2024 12:28:27 GMT', 'Server': 'Apache', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'POST', 'Access-Control-Max-Age': '3600', 'Access-Control-Allow-Headers': 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With', 'Keep-Alive': 'timeout=5, max=98', 'Connection': 'Keep-Alive', 'Transfer-Encoding': 'chunked', 'Content-Type': 'application/json;charset=UTF-8'} 
+ body={"msg":"book is successfully deleted"} 
+ </msg>
+<msg time="2024-09-23T17:58:28.599356" level="INFO">${deleteresponse} = &lt;Response [200]&gt;</msg>
+<var>${deleteresponse}</var>
+<arg>${baseurl}/Library/DeleteBook.php</arg>
+<arg>json=${deletereq_body}</arg>
+<arg>expected_status=200</arg>
+<doc>Sends a POST request.</doc>
+<status status="PASS" start="2024-09-23T17:58:27.962173" elapsed="0.637183"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${deleteresponse.json()}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-09-23T17:58:28.599356" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${deleteresponse.json()}[msg]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-09-23T17:58:28.599356" elapsed="0.015227"/>
+</kw>
+<tag>API</tag>
+<status status="PASS" start="2024-09-23T17:58:27.951159" elapsed="0.663424"/>
+</test>
+<status status="PASS" start="2024-09-23T17:58:26.278534" elapsed="2.336049"/>
+</suite>
+<status status="PASS" start="2024-09-23T17:58:26.199248" elapsed="2.415335"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="4" fail="0" skip="0">API</stat>
+</tag>
+<suite>
+<stat pass="4" fail="0" skip="0" id="s1" name="Test">Test</stat>
+<stat pass="4" fail="0" skip="0" id="s1-s1" name="TestDictionaryRobot">Test.TestDictionaryRobot</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

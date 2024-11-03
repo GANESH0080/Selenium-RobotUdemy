@@ -1,0 +1,7 @@
+datasources:fd8588d7b7ecadf6773a20bc006e495b4f8933b3
+commandlineoptions:65f95c924ba97541f47949701c4e3c51192a5b43
+suitesfrom:no-suites-from-option
+file:752875ece4c56f0b8db189ea6392bc63dd660888
+--test CustomLibrary.Validate unsuccessful login
+--test CustomLibrary.Validate cart display on shopping page
+--test CustomLibrary.Fill the Login details and login form
